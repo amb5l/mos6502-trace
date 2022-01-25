@@ -6,7 +6,7 @@ See https://github.com/gianlucag/mos6502.
 
 Produces a text file containing register values prior to each instruction being executed. Useful for hardware engineers verifying 6502 compatible cores.
 
-    usage: trace <binfile> [RSTV [SP [S [A [X [Y]]]]]]
+    usage: trace \<binfile\> \[RSTV \[SP \[S \[A \[X \[Y\]\]\]\]\]\]
       binfile: binary file path/name
          RSTV: reset vector (4 digit hex)
            SP: stack pointer initial value (2 digit hex)
@@ -16,4 +16,4 @@ Produces a text file containing register values prior to each instruction being 
             Y: Y index register initial value (2 digit hex)
 
     example (Windows):
-      trace.exe ..6502_65C02_functional_testsbin_files6502_functional_test.bin 0400 00 34 > trace.txt
+      trace.exe ..\6502_65C02_functional_tests\bin_files\6502_functional_test.bin 0400 00 34 > trace.txt
