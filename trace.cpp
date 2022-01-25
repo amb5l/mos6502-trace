@@ -123,17 +123,15 @@ int main(int argc, char **argv) {
     fprintf(stderr, "      X register  = %02X\n", cpu.GetResetX());        
     fprintf(stderr, "      Y register  = %02X\n", cpu.GetResetY());        
 
-    std::ifstream fi(binfile, ios::in | ios::binary );
-    fi.read((char*)mem, sizeof(mem));
-    fi.close();
+    std::ifstream f(binfile, ios::in | ios::binary );
+    f.read((char*)mem, sizeof(mem));
+    f.close();
 
     MemWr(0xFFFC, rstvec & 0xFF);
     MemWr(0xFFFD, rstvec >> 8);
     cpu.Reset();
     pc_prev = 0;
 
-    ofstream fo;
-    fo.open ("trace.txt", ios::out);
     while(cpu.GetPC() != pc_prev) {
         pc_prev = cpu.GetPC();
         fprintf(stdout, "%04X %02X %02X %02X %02X %02X\n",
@@ -143,9 +141,6 @@ int main(int argc, char **argv) {
         if ((count_instructions % 1000000) == 0)
             fprintf(stderr, "%d\n", count_instructions);
     }
-    fprintf(stdout, "%04X %02X %02X %02X %02X %02X\n",
-        cpu.GetPC(), cpu.GetS(), cpu.GetP(), cpu.GetA(), cpu.GetX(), cpu.GetY() );
     fprintf(stderr, "%d\n", count_instructions);
-    fo.close();    
     exit(0);
 }
