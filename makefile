@@ -1,5 +1,5 @@
 # path to mos6502 repo
-MOS6502=../mos6502
+MOS6502=mos6502
 
 CC=g++
 CFLAGS=-c -Wall
