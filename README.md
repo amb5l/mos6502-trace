@@ -4,7 +4,9 @@ Traces execution of a 6502 binary using the mos6502 emulator by Gianluca Ghettin
 
 See https://github.com/gianlucag/mos6502.
 
-Produces a text file containing register values prior to each instruction being executed. Useful for hardware engineers verifying 6502 compatible cores.
+Outputs text containing register values prior to each instruction being executed. Useful for hardware engineers verifying 6502 compatible cores.
+
+
 
     usage: trace <binfile> [RSTV [SP [S [A [X [Y]]]]]]
       binfile: binary file path/name
