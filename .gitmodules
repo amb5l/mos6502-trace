@@ -1,0 +1,3 @@
+[submodule "mos6502"]
+	path = mos6502
+	url = https://github.com/amb5l/mos6502.git
