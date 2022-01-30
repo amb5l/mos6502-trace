@@ -32,11 +32,11 @@ int main(int argc, char **argv) {
     fprintf(stderr, "mos6502 trace utility\n");
 
     if ((argc < 2) || (argc > 8)) {
-        fprintf(stderr, "usage: trace <binfile> [RSTV [SP [S [A [X [Y]]]]]]\n");
+        fprintf(stderr, "usage: trace <binfile> [RSTV [S [P [A [X [Y]]]]]]\n");
         fprintf(stderr, "  binfile: binary file path/name e.g. bin/myfile.bin\n");
         fprintf(stderr, "     RSTV: reset vector (4 digit hex)\n");
-        fprintf(stderr, "       SP: stack pointer initial value (2 digit hex)\n");
-        fprintf(stderr, "        S: status register initial value (2 digit hex)\n");
+        fprintf(stderr, "        S: stack pointer initial value (2 digit hex)\n");
+        fprintf(stderr, "        P: processor status register initial value (2 digit hex)\n");
         fprintf(stderr, "        A: accumulator initial value (2 digit hex)\n");
         fprintf(stderr, "        X: X index register initial value (2 digit hex)\n");
         fprintf(stderr, "        Y: Y index register initial value (2 digit hex)\n");
