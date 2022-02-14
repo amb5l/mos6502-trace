@@ -141,6 +141,8 @@ int main(int argc, char **argv) {
         if ((count_instructions % 1000000) == 0)
             fprintf(stderr, "%d\n", count_instructions);
     }
+    fprintf(stdout, "%04X %02X %02X %02X %02X %02X\n",
+        cpu.GetPC(), cpu.GetS(), cpu.GetP(), cpu.GetA(), cpu.GetX(), cpu.GetY() );
     fprintf(stderr, "%d\n", count_instructions);
     exit(0);
 }
